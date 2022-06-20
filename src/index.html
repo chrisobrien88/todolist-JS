@@ -10,7 +10,14 @@
 </head>
 
 <body>
-  <!-- Add your markup here -->
+  <main>
+    <h1 class="app-title">todos</h1>
+    <form class = input-form>
+      <input data-testid="txtTodoItemTitle" type="text" label="Register New Todo" placeholder="E.g. Make a todo list..." class="input-form__input">
+      <button data-testid="btnAddTodo" class="button">Add</button>
+    </form>
+    <ul class="todo" data-testid="todoList"></ul>
+  </main>
 </body>
 
 </html>

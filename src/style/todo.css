@@ -1,3 +1,174 @@
 * {
   box-sizing: border-box;
+  margin: 8px;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+}
+
+body{
+  background-color: rgb(4, 51, 92);
+  height: 90vh;
+  color:aliceblue;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form {
+  order: 2;
+  margin-top: auto;
+  margin-bottom: 5px;
+  width:100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.input-form__input{
+  width: 100%;
+  border-radius: 10px;
+  color:rgb(255, 255, 255);
+  padding: 10px 10px;
+  font-size: 16px;
+  margin-bottom: 0px;
+  border: none;
+  border-bottom: 3px solid rgb(194, 251, 215);;
+  outline: none;
+  background-color: transparent;
+}
+
+.button{
+  background-color: rgb(194, 251, 215);
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px 20px;
+  text-align: center;
+  transition: all 250ms;
+  font-size: 14px;
+}
+
+.button:active {
+  box-shadow: rgba(43, 85, 59, 0.9) 0 -25px 18px -14px;
+  transform: scale(1.05) rotate(20deg);
+}
+
+.todo{
+  order: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.todo:empty::after{
+  content: "Type above the green line to start a todo list";
+}
+
+.todo__item {
+  order: 1;
+  width: 100%;
+  background-color: rgb(173, 247, 200);
+  color:rgb(4, 51, 92);
+  border-radius: 10px;
+  box-shadow: rgba(181, 238, 203, 0.7) 0 2px 8px 4px;
+  padding: 10px 5px;
+  border: 20px;
+  margin: 6px;
+  text-align:justify;
+  font-size: 16px;
+}
+
+.todo__item:active {
+  box-shadow: rgba(43, 85, 59, 0.9) 0 -25px 18px -14px;
+  transform: scale(1.01);
+}
+
+.todo__item--completed {
+  order: 2;
+  width: 90%;
+  border-radius: 10px;
+  background-color: rgb(154, 154, 154);
+  box-shadow: rgba(0, 0, 0, 0.7) 0 3px 2px 1px;
+  color:rgb(47, 47, 47);
+  text-decoration: line-through;
+}
+
+.todo__item .button--delete {
+  display: none;
+}
+
+.todo__item--completed .button--delete{
+  display: all;  
+}
+
+.button--delete {
+  background-color: rgb(234, 34, 34);
+  font-size: 10px;
+  color: white;
+  box-shadow: none;
+  padding: 5px 20px;
+  margin: 5px 20px;
+}
+
+@media (hover: hover){
+  .button:hover {
+    box-shadow: rgba(255, 255, 255, 0.35) 0 -25px 18px -14px inset,rgba(255, 255, 255, 0.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(2deg);
+  }
+
+  .input-form__input:hover{
+    box-shadow:  rgb(0, 255, 98, 0.25) 0px 5px 6px,rgb(255, 255, 255, 0.2) 0px 6px 2px;
+  }
+
+  .todo__item:hover{
+    background-color: rgb(120, 251, 168);
+    transform: scale(1.05);
+  }
+  
+  .todo__item:hover::after{
+    font-size: small;
+    color: rgb(40, 83, 93);
+    content: "Click to mark as done";
+  }
+
+  .todo__item--completed:hover::after{
+    content:none;
+  }
+
+  .todo__item--completed:hover{
+    background-color: rgb(120, 251, 168, 0.7);
+    transform: scale(1.02);
+
+  }
+  
+  .button--delete:hover {
+    box-shadow: rgba(255, 255, 255, 0.35) 0 -25px 18px -14px inset,rgba(255, 255, 255, 0.25) 0 1px 2px,rgba(187, 44, 44, 0.25) 0 2px 4px,rgba(187, 44, 44, 0.25) 0 4px 8px,rgba(239, 20, 20, 0.25) 0 8px 16px,rgba(243, 13, 13, 0.25) 0 16px 32px;
+    transform: scale(0.95);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .input-form {
+    order:1;
+    margin-top: 5px;
+    max-width: 500px;
+  }
+
+  .todo__item {
+    max-width: 300px;
+    height: fit-content;
+  }
+
+  .todo__item--completed {
+    max-width: 250px;
+  }
+
+  .todo {
+    order:2;
+    flex-flow: row wrap;
+  }
 }
