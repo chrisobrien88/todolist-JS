@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla JS Todo App</title>
+    <link rel="stylesheet" type="text/css" href="./style/todo.css" />
+    <script defer src="./js/todo3.js"></script>
+  </head>
+
+  <body>
+    <div class="todo">
+        <h1 class="app-title">Todos</h1><br>
+        <form class="input-form" >
+          <label for="task-input">Add a new task...</label><br>
+          <input
+            class="task-input"
+            data-testid="txtTodoItemTitle"
+            id="task-input"
+            type="text"
+            required
+          />
+          <input
+            class="submit"
+            type="submit"
+            value="Add"
+          />
+        </form>
+      <ul class="todo" data-testid="todoList"></ul>
+    </div>
+  </body>
+</html>
